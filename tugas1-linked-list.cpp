@@ -3,72 +3,46 @@
 
 using namespace std;
 
-typedef int typeinfo;
-typedef struct typenode *typeptr;
-
+// membuat struct typenode utk info dan pointer next
 struct typenode
 {
-  typeinfo info, nim;
-  char nama[50];
-  typeptr next;
+  string info;    // deklarasi info sbg string
+  typenode *next; // deklarasi pointer next sbg typenode
 };
-
-typeptr awal, akhir;
-
-void buatlist()
-{
-  awal = (typenode *)malloc(sizeof(typenode));
-  awal->info = 123180000;
-  akhir = (typenode *)malloc(sizeof(typenode));
-  akhir->info = 123180101;
-  awal->next = akhir;
-  akhir->next = NULL;
-}
-
-void inputlist()
-{
-  typeptr inputdata, bantu;
-  inputdata = (typenode *)malloc(sizeof(typenode));
-  cout << "Nama : ";
-  cin >> inputdata->nama;
-  cout << "Nim  : ";
-  cin >> inputdata->nim;
-  inputdata->info = inputdata->nim;
-  inputdata->next = NULL;
-  bantu = awal;
-  while (bantu->next->info < inputdata->nim)
-  {
-    bantu = bantu->next;
-  }
-  inputdata->next = bantu->next;
-  bantu->next = inputdata;
-}
-
-void cetaklist()
-{
-  typeptr bantu;
-  int i = 1;
-  bantu = awal->next;
-  while (bantu != akhir)
-  {
-    cout << "MHS " << i << "\nNama : " << bantu->nama << endl;
-    cout << "Nim  : " << bantu->nim << endl;
-    bantu = bantu->next;
-    i++;
-  }
-  cout << endl;
-}
 
 int main()
 {
-  buatlist();
-  int n;
-  cout << "banyak data : ";
-  cin >> n;
-  for (int i = 0; i < n; i++)
+  string N;                                    // deklarasi utk inputan
+  typenode *awal, *bantu;                      // deklarasi pointer awal dan bantu
+  awal = (typenode *)malloc(sizeof(typenode)); // menunjuk lokasi dari typenode
+  bantu = awal;
+
+  cout << "Masukkan karakter (n = stop) : " << endl;
+
+  // looping utk menginput data
+  while (bantu != NULL)
   {
-    inputlist();
+    cin >> N;
+    if (N == "n") // jika inputan = n maka program selesai
+    {
+      bantu->next = NULL;
+      bantu = NULL;
+    }
+
+    else // jika inputan != n maka program akan mengulang
+    {
+      bantu->info = N;
+      bantu->next = (typenode *)malloc(sizeof(typenode));
+      bantu = bantu->next;
+    }
   }
-  cout << "\nCetak List\n";
-  cetaklist();
+  cout << endl
+       << "Cetak :" << endl;
+  bantu = awal;
+
+  while (bantu != NULL) // perulangan utk menampilkan linked lis
+  {
+    cout << bantu->info << endl;
+    bantu = bantu->next; //
+  }
 }
