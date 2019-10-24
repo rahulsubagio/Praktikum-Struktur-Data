@@ -22,3 +22,6 @@ materi stack menggunakan linked list ... tetapi ada masalah ketika meng push leb
 
 # pertemuan6-stack-pointer.cpp
 materi tentang stuck menggunakan pointer
+
+# pertemuan6-queue.cpp
+materi tentang queue (antrian)
