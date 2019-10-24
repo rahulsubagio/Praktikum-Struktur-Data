@@ -18,4 +18,7 @@ Buatlah program untuk memasukkan beberapa data dalam sebuah senarai (linked list
 materi tentang stack / tumpukan secara array
 
 # pertemuan5.cpp
-materi stack menggunakan pointer ... tetapi ada masalah ketika meng push lebih dari 3 kali, maka pop nya akan error (core dumped) ... yg bisa selesaikan errornya mohon d bantu yaah :v
+materi stack menggunakan linked list ... tetapi ada masalah ketika meng push lebih dari 3 kali, maka pop nya akan error (core dumped) ... yg bisa selesaikan errornya mohon d bantu yaah :v
+
+# pertemuan6-stack-pointer.cpp
+materi tentang stuck menggunakan pointer
