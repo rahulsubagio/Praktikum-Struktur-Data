@@ -28,3 +28,6 @@ materi tentang queue (antrian)
 
 ### folder latres
 kodingan latihan responsi yang mencakup materi pohon telusur biner (PTB) dan materi lainnya.
+
+### folder project
+project akhir tentang rental mobil yang mencakup 3 materi yaitu linked list, stuck dan queue.
